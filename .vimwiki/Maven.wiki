@@ -1,0 +1,10 @@
+= MAVEN =
+
+== Build Lifecycle ==
+
+built-in lifecycles
+1. default - deployments
+2. clean - clean
+3. site - documentation
+
+* each lifecyle is defined by phase 

@@ -1,0 +1,52 @@
+==shared service example==
+
+https://stackoverflow.com/questions/51338259/shared-service-example-angular-5
+
+{{{javascript
+
+private tasks: Array<Task>;
+public $tasks: BehaviorSubject<Array<Task>>;
+
+constructor(private http: HttpClient) {
+  this.$tasks = new BehaviorSubject([]);
+  ...
+}
+
+getAllTasks() {
+ this.http.get(environment.apiUri + 'tasks')
+    .subscribe(data => {
+      this.tasks = data;
+      this.$tasks.next(this.tasks);
+    });
+}
+
+updateTask(params) {
+  this.http.post(/* params */).subscribe((task) => {
+    this.tasks = this.tasks.map(t => t.id !== task.id ? t : task);
+    this.$tasks.next(this.tasks);
+  });
+}
+
+createTask(...) {
+  // again, do a request, update this.tasks and call $tasks.next
+  ...
+}
+
+tasks: Array<Tasks>;
+
+constructor(private tasksProvider: TasksProvider) {
+  this.tasksProvider.$tasks.subscribe(tasks => this.tasks = tasks);
+}
+
+ngOnInit() { 
+  this.tasksProvider.getAllTasks();
+}
+
+public updateCheckboxValue(id: number, name: string, event: any){
+  this.tasksProvider.updateTask(id, name, event.checked);
+}
+
+}}}
+
+
+

@@ -7,8 +7,14 @@ set incsearch
 set smartindent
 set noswapfile
 set nobackup
+set nowritebackup
 set undodir=~/.vim/undodir
 set undofile
+set hidden
+set shortmess+=c
+"set mouse=a "enables mouse
+
+filetype plugin on
 
 inoremap fd <ESC>
 let mapleader=" "
@@ -24,12 +30,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 Plug 'jremmen/vim-ripgrep'
 Plug 'flazz/vim-colorschemes'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vimwiki/vimwiki'
 Plug 'kyoz/purify', { 'rtp': 'vim' }
+"Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 
@@ -46,7 +54,8 @@ nnoremap <Leader>wk :wincmd k<CR>
 nnoremap <Leader>wh :wincmd h<CR>
 
 "paste from clipboard
-nnoremap <Leader>pg "*p
+"nnoremap <Leader>pg "*p !NOT WORKING
+nnoremap <Leader>yg "+Y
 
 "saving
 nnoremap <Leader>sf :w<CR>
@@ -58,3 +67,5 @@ nnoremap <Leader>bl buffers<CR>:buffer<SPACE>
 colorscheme purify
 set background=dark
 
+
+source $HOME/.config/nvim/mycocconf.vim

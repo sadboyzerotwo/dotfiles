@@ -1,0 +1,8 @@
+[[angular]]
+1. [[Cache data from http|Cache]]
+== [[LINUX]] ==
+1. [[Alacritty]]
+
+== JAVA ==
+1. [[spring-ng-maven-deploy|test]]
+2. [[Maven]] 
