@@ -116,25 +116,33 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH=/home/codezerotwo/.install/nvim-linux64/bin:${PATH}
-export PATH=/home/codezerotwo/.install/jdk-11.0.9/bin:${PATH}
-export PATH=/home/codezerotwo/.install/idea-IU-192.6817.14/bin:${PATH}
-export PATH=/home/codezerotwo/.install/micro-editor:${PATH}
-export PATH=/home/codezerotwo/.local/bin:${PATH}
-export HISTCONTROL=ignoreboth
-
+export PATH=/home/sadboy/neovim/bin:${PATH}
+export PATH=/home/sadboy/.install/jdk-11.0.9/bin:${PATH}
+export PATH=/home/sadboy/.install/idea-IU-192.6817.14/bin:${PATH}
+export PATH=/home/sadboy/.install/micro-editor:${PATH}
+export PATH=/home/sadboy/.install/apache-maven-3.6.3/bin:${PATH}
+export PATH=/home/sadboy/.install/lua-5.4.2/src:${PATH}
+export PATH=/home/sadboy/.local/bin:${PATH}
 
 alias ..='cd ..'
-alias ls='ls --color=auto'
-alias la='ls -A'
-alias l='ls -CF'
-alias ll='ls -alF'
-alias grep='grep --color=auto'
 alias v='nvim'
+alias vc='cd ~/.config/nvim'
+alias work='cd ~/Work'
+alias pj='cd ~/Projects'
+alias lab='cd ~/Lab'
+
+#git cmd shorcuts
+alias gs='git status';
+alias gb='git branch';
+alias gba='git branch -a';
+alias gc='git checkout';
+
 export EDITOR=nvim
+export JAVA_HOME=/home/sadboy/.install/jdk-11.0.9
+export MAVEN_HOME=/home/sadboy/.install/apache-maven-3.6.3
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-alias config='/usr/bin/git --git-dir=/home/codezerotwo/dotfiles --work-tree=/home/codezerotwo'
+alias config='/usr/bin/git --git-dir=/home/sadboy/.cfg --work-tree=/home/sadboy'
 

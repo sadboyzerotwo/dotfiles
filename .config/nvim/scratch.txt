@@ -1,0 +1,28 @@
+lua <<EOF
+require'lspconfig'.jdtls.setup{
+	on_attach=require'completion'.on_attach,
+	filetypes = { "java" },
+	init_options= {
+	jvm_args = {
+		"-javaagent:/home/sadboy/.install/lombok/lombok.jar"	
+	}
+}
+}
+EOF
+
+"inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+"inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+"set completeopt=menuone,noinsert,noselect
+
+"let g:completion_confirm_key = "\<C-y>"
+"let g:completion_matching_stategy_list = ['exact', 'substring', 'fuzzy', 'all']
+"let g:completion_timer_cycle = 80
+
+"nnoremap <space>, <cmd>lua vim.lsp.diagnostic.goto_prev()<CR> 
+"nnoremap <space>; <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+"nnoremap <space>d' <cmd>lua vim.lsp.buf.definition()<CR>
+"nnoremap <space>f' <cmd>lua vim.lsp.buf.formatting()<CR>
+"nnoremap <space>h' <cmd>lua vim.lsp.buf.hover()<CR>
+"nnoremap <space>m' <cmd>lua vim.lsp.buf.rename()<CR>
+"nnoremap <space>r' <cmd>lua vim.lsp.buf.references()<CR>
+"nnoremap <space>s' <cmd>lua vim.lsp.buf.document_symbol()<CR>
