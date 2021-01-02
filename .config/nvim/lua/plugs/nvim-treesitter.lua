@@ -4,15 +4,10 @@ return function ()
       enable = true
     },
     incremental_selection = {
-      enable = true,
-      keymaps = {
-        init_selection = "<c-n>c-i>",
-        node_incremental = "<c-i>n",
-        scope_incremental = "<c-i>c",
-        node_decremental = "<c-i>m",
-      },
+      enable = true
     },
     refactor = {
+      --highlights definition and usages under cursor
       highlight_definitions = {
         enable = true
       },
@@ -28,16 +23,20 @@ return function ()
       navigation = {
         enable = true,
         keymaps = {
-          goto_definition = "<leader>td",
-          list_definitions = "<leader>tl"
+            goto_definition = "<leader>td",
+            list_definitions = "<leader>tD",
+            list_definitions_toc = "gO",
+            goto_next_usage = "<a-*>",
+            goto_previous_usage = "<a-#>",
         }
-      }
+     }
     },
     textobjects = {
       enable=true,
       select = {
         enable = true,
         keymaps = {
+          --TODO: understand what's this for
           -- You can use the capture groups defined in textobjects.scm
           ["af"] = "@function.outer",
           ["if"] = "@function.inner",
@@ -62,6 +61,7 @@ return function ()
           ["<leader>ah"] = "@parameter.inner",
         },
       },
+      -- code navigation
       move = {
         enable = true,
         goto_next_start = {

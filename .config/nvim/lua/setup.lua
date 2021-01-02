@@ -1,6 +1,5 @@
 local cmd = vim.cmd
 
-
 local function set(scope, key, value)
 	local scopes = { o = vim.o, b = vim.bo, w = vim.wo }
 	scopes['o'][key] = value
@@ -18,6 +17,7 @@ set('o', 'hidden', true)
 set('o', 'updatetime', 300)
 set('o', 'backup', false)
 set('o', 'writebackup', false)
+set('o', 'termguicolors', true)
 set('o','completeopt','menuone,noinsert,noselect')
 
 local indent = 4
@@ -47,5 +47,5 @@ set('w', 'signcolumn', 'yes')
 set('w', 'relativenumber', true)
 set('w', 'wrap', false)
 
-
 vim.o.shortmess = vim.o.shortmess .. 'c'
+

@@ -127,6 +127,7 @@ export PATH=/home/sadboy/.local/bin:${PATH}
 alias ..='cd ..'
 alias v='nvim'
 alias vc='cd ~/.config/nvim'
+alias va='cd ~/.config/alacritty'
 alias work='cd ~/Work'
 alias pj='cd ~/Projects'
 alias lab='cd ~/Lab'
@@ -135,7 +136,6 @@ alias lab='cd ~/Lab'
 alias gs='git status';
 alias gb='git branch';
 alias gba='git branch -a';
-alias gc='git checkout';
 
 export EDITOR=nvim
 export JAVA_HOME=/home/sadboy/.install/jdk-11.0.9

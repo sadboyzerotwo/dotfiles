@@ -1,3 +1,9 @@
+= TODO =
+- [ ] Automate selection of jdk version
+- [ ] Create alias
+- [ ] Create program that converts csv to map of objects (json format)
+
+
 == ANGULAR ==
 1. [[angular]]
 2. [[Cache data from http|Cache]]
@@ -18,14 +24,3 @@
 == NEOVIM ==
 1. [[Resources]]
 
-
-
-= Test =
-| test   | h1        |
-| sf     | asdsffasf |
-| sfj    | adsfasdf  |
-| s      | asdf      |
-| adsfsa | fad       |
-| fads   | adsf      |
-| sdf    | adf       |
-| sdfa   |           |
