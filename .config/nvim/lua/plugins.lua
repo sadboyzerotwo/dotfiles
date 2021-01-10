@@ -12,7 +12,7 @@ vim.cmd [[ autocmd BufWritePost plugins.lua PackerCompile ]]
 
 return require('packer').startup(
 	function()
-	use { 'wbthomason/packer.nvim' , opt = true }
+                use { 'wbthomason/packer.nvim' , opt = true }
 		use { 'morhetz/gruvbox' }
                 --use { 'preservim/nerdtree' }
                 use { 'kyazdani42/nvim-tree.lua' }
@@ -39,6 +39,16 @@ return require('packer').startup(
 		use { 'nvim-telescope/telescope.nvim',
 			requires = {{'nvim-lua/popup.nvim'},{'nvim-lua/plenary.nvim'}}
 		}
+                use { 'hrsh7th/vim-vsnip' ,
+                   after = { 'completion-nvim' },
+                    config = function()
+                      vim.g.vsnip_snippet_dir = vim.fn.stdpath('config')..'/snippets'  
+                    end
+                }
+                use { 'hrsh7th/vim-vsnip-integ' ,
+                    after = { 'completion-nvim' ,'vim-vsnip' },
+                }
+                use { 'NLKNguyen/papercolor-theme' }
                 --use { '~/Lab/nvim-plugins/whid' }
 	end
 )

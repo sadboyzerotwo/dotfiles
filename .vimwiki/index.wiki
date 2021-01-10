@@ -1,7 +1,10 @@
+= WORK =
+* [[Todos]]
+
 = TODO =
 - [ ] Automate selection of jdk version
-- [ ] Create alias
-- [ ] Create program that converts csv to map of objects (json format)
+- [X] Create alias
+- [X] Create program that converts csv to map of objects (json format)
 
 
 == ANGULAR ==
@@ -9,10 +12,12 @@
 2. [[Cache data from http|Cache]]
 
 
-
 == [[LINUX]] ==
 1. [[Alacritty]]
 2. [[Installing Apps]]
+3. [[Tmux]]
+4. [[Kitty]]
+5. [[Arch]]
 
 == JAVA ==
 1. [[spring-ng-maven-deploy|test]]

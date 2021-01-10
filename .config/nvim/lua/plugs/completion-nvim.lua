@@ -1,6 +1,6 @@
 return function()
 vim.g.completion_chain_complete_list =	{
-	{
+        {
 		complete_items = { "lsp", "snippet", "buffers" }
 	},
 	{
@@ -10,12 +10,11 @@ vim.g.completion_chain_complete_list =	{
 		mode = "<c-n>"
 	}
 }
-
+vim.g.completion_enable_snippet = "vim-vsnip"
 vim.g.completion_matching_ignore_case = true
-vim.g.completion_timer_cycle = 80
-vim.cmd([[let g:completion_confirm_key = "\<C-y>"]])
+--vim.cmd([[let g:completion_confirm_key = "\<C-y>"]])
 
-vim.g.completion_items_priority = {
+--[[vim.g.completion_items_priority = {
 	Field = 5,
 	Function = 7,
 	Module = 7,
@@ -28,5 +27,5 @@ vim.g.completion_items_priority = {
 	Buffers = 1,
 	TabNine = 0,
 	File = 0
-}
+}]]--
 end

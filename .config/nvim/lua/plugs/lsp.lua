@@ -3,9 +3,10 @@ return function()
 	local nvim_lsp = require('lspconfig')
 
         local utils = require('plugs.utils')
-
+        
 
         local on_attach = function(client, bufnr)
+
             completion.on_attach(client,bufnr)
 
             local lsp_keymap = {
@@ -35,9 +36,15 @@ return function()
                }
             }
 
-            utils.set_buf_keymap(lsp_keymap,nil,function (value)
-                return "<Cmd>lua " .. value
-            end)
+            utils.set_buf_keymap(
+                lsp_keymap,
+                nil,
+                function (value)
+                    return "<Cmd>lua " .. value
+                end
+            )
+
+            vim.api.nvim_buf_set_keymap(0,'n','<leader>a', '<Cmd>lua vim.lsp.buf.code_action()<CR>', {noremap=true});
 
             local telescope_keymap = {
                 n = {
@@ -57,17 +64,7 @@ return function()
             )
         end
 
-	nvim_lsp.jdtls.setup{
-		on_attach = on_attach,
-		filetypes = { "java" },
-                root_dir = nvim_lsp.util.root_pattern('pom.xml'),
-		init_options = {
-			jvm_args = {
-				"-javaagent:/home/sadboy/.install/lombok/lombok.jar"
-			}
-		}
-	}
-
+--[[
 	nvim_lsp.tsserver.setup{
 		on_attach = on_attach,
 		filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" }
@@ -103,4 +100,18 @@ return function()
                 }
             }
         }
+        ]]--
+	nvim_lsp.jdtls.setup{
+                cmd = { 'java-lsp.sh' },
+		on_attach = on_attach,
+		filetypes = { "java" },
+                root_dir = nvim_lsp.util.root_pattern('pom.xml')
+                --[[,
+		init_options = {
+			jvm_args = {
+				"-javaagent:/home/sadboy/.install/lombok/lombok.jar -Xbootclasspath/a:/home/sadboy/.install/lombok/lombok.jar"
+			}
+		}]]--
+	}
+        
 end

@@ -98,15 +98,16 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#export PATH=$HOME/.install/jdk-11.0.9/bin:$PATH
-export PATH=$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/bin:$PATH
+export PATH=$HOME/.install/jdk-11.0.9/bin:$PATH
+#export PATH=$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/bin:$PATH
 export PATH=$HOME/neovim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.install/apache-maven-3.6.3/bin:$PATH
+export PATH=$HOME/.install/jdtls:$PATH
 
 
-#export JAVA_HOME=$HOME/.install/jdk-11.0.9
-export JAVA_HOME=$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64
+export JAVA_HOME=$HOME/.install/jdk-11.0.9
+#export JAVA_HOME=$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64
 export MAVE_HOME=$HOME/.install/apache-main-3.6.3
 
 bindkey -v

@@ -9,11 +9,32 @@ endif
 
 lua << END
 local plugins = {
+  ["completion-nvim"] = {
+    after = { "vim-vsnip", "vim-vsnip-integ" },
+    only_config = true,
+    only_sequence = true
+  },
   ["packer.nvim"] = {
     loaded = false,
     only_sequence = false,
     only_setup = false,
     path = "/home/sadboy/.local/share/nvim/site/pack/packer/opt/packer.nvim"
+  },
+  ["vim-vsnip"] = {
+    after = { "vim-vsnip-integ" },
+    config = { "\27LJ\2\ng\0\0\4\0\a\0\v6\0\0\0009\0\1\0006\1\0\0009\1\3\0019\1\4\1'\3\5\0B\1\2\2'\2\6\0&\1\2\1=\1\2\0K\0\1\0\14/snippets\vconfig\fstdpath\afn\22vsnip_snippet_dir\6g\bvim\0" },
+    load_after = {},
+    loaded = false,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/sadboy/.local/share/nvim/site/pack/packer/opt/vim-vsnip"
+  },
+  ["vim-vsnip-integ"] = {
+    load_after = {},
+    loaded = false,
+    only_sequence = true,
+    only_setup = false,
+    path = "/home/sadboy/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ"
   }
 }
 
@@ -110,7 +131,7 @@ _packer_load = function(names, cause)
     end
 
     if cause.prefix then
-      local prefix = vim.v.count and vim.v.count or ''
+      local prefix = vim.v.count ~= 0 and vim.v.count or ''
       prefix = prefix .. '"' .. vim.v.register .. cause.prefix
       if vim.fn.mode('full') == 'no' then
         if vim.v.operator == 'c' then
@@ -139,19 +160,25 @@ end
 -- Pre-load configuration
 -- Post-load configuration
 -- Config for: nvim-lspconfig
-loadstring("\27LJ\2\n!\0\1\3\0\1\0\4'\1\0\0\18\2\0\0&\1\2\1L\1\2\0\14<Cmd>lua '\0\1\3\0\1\0\4'\1\0\0\18\2\0\0&\1\2\1L\1\2\0\20<Cmd>Telescope ž\a\1\2\t\2\14\0\29-\2\0\0009\2\0\2\18\4\0\0\18\5\1\0B\2\3\0015\2\2\0005\3\1\0=\3\3\0025\3\4\0=\3\5\0025\3\6\0=\3\a\2-\3\1\0009\3\b\3\18\5\2\0+\6\0\0003\a\t\0B\3\4\0015\3\v\0005\4\n\0=\4\3\3-\4\1\0009\4\b\4\18\6\3\0-\a\1\0009\a\f\a3\b\r\0B\4\4\1K\0\1\0\0À\2À\0\22leader_key_mapper\1\0\0\1\0\5\alw\25lsp_document_symbols\alt\15treesitter\alr\19lsp_references\al.\21lsp_code_actions\alW\26lsp_workspace_symbols\0\19set_buf_keymap\6i\1\0\1\n<c-k>!vim.lsp.buf.signature_help()\6v\1\0\1\15<leader>lf#vim.lsp.buf.range_formatting()\6n\1\0\0\1\0\16\agr\29vim.lsp.buf.references()\agW#vim.lsp.buf.workspace_symbol()\agI\"vim.lsp.buf.type_definition()\6K\24vim.lsp.buf.hover()\agi!vim.lsp.buf.implementation()\n<c-k>!vim.lsp.buf.signature_help()\agD\30vim.lsp.buf.declaration()\15<leader>lR\25vim.lsp.buf.rename()\agd\29vim.lsp.buf.definition()\15<leader>lf#vim.lsp.buf.range_formatting()\14<leader>;#vim.lsp.diagnostic.goto_next()\15<leader>lF\"vim.lsp.buf.code_formatting()\14<leader>,#vim.lsp.diagnostic.goto_prev()\15<leader>l.\30vim.lsp.buf.code_action()\ag0\"vim.lsp.buf.document_symbol()\15<leader>el%vim.lsp.diagnostic.set_loclist()\14on_attachÂ\6\1\0\14\0/\0Q6\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0026\2\0\0'\4\3\0B\2\2\0023\3\4\0009\4\5\0019\4\6\0045\6\a\0=\3\b\0065\a\t\0=\a\n\0069\a\v\0019\a\f\a'\t\r\0B\a\2\2=\a\14\0065\a\16\0005\b\15\0=\b\17\a=\a\18\6B\4\2\0019\4\19\0019\4\6\0045\6\20\0=\3\b\0065\a\21\0=\a\n\6B\4\2\0019\4\22\0019\4\6\0045\6\23\0=\3\b\0065\a\24\0=\a\n\6B\4\2\0019\4\25\0019\4\6\0044\6\0\0B\4\2\0019\4\26\0019\4\6\0045\6\27\0=\3\b\0065\a\28\0=\a\n\0065\a,\0005\b\30\0005\t\29\0=\t\31\b5\t!\0005\n \0=\n\"\t=\t#\b5\t)\0004\n\0\b6\v$\0009\v%\v9\v&\v'\r'\0B\v\2\2+\f\2\0<\f\v\n6\v$\0009\v%\v9\v&\v'\r(\0B\v\2\2+\f\2\0<\f\v\n=\n*\t=\t+\b=\b-\a=\a.\6B\4\2\0012\0\0€K\0\1\0\rsettings\bLua\1\0\0\14workspace\flibrary\1\0\0\28$VIMRUNTIME/lua/vim/lsp\20$VIMRUNTIME/lua\vexpand\afn\bvim\16diagnostics\fglobals\1\0\0\1\3\0\0\bvim\buse\fruntime\1\0\0\1\0\1\fversion\vLuaJIT\1\2\0\0\blua\1\0\0\16sumneko_lua\thtml\1\2\0\0\tjson\1\0\0\vjsonls\1\a\0\0\15javascript\20javascriptreact\19javascript.jsx\15typescript\20typescriptreact\19typescript.tsx\1\0\0\rtsserver\17init_options\rjvm_args\1\0\0\1\2\0\0007-javaagent:/home/sadboy/.install/lombok/lombok.jar\rroot_dir\fpom.xml\17root_pattern\tutil\14filetypes\1\2\0\0\tjava\14on_attach\1\0\0\nsetup\njdtls\0\16plugs.utils\14lspconfig\15completion\frequire\0")()
--- Config for: nvim-treesitter
-loadstring("\27LJ\2\nâ\t\0\0\a\0-\00036\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0005\4\a\0=\4\b\3=\3\t\0025\3\v\0005\4\n\0=\4\f\0035\4\r\0=\4\14\0035\4\15\0005\5\16\0=\5\b\4=\4\17\0035\4\18\0005\5\19\0=\5\b\4=\4\20\3=\3\21\0025\3\22\0005\4\23\0005\5\24\0005\6\25\0=\6\26\5=\5\b\4=\4\27\0035\4\28\0005\5\29\0=\5\30\0045\5\31\0=\5 \4=\4!\0035\4\"\0005\5#\0=\5$\0045\5%\0=\5&\0045\5'\0=\5(\0045\5)\0=\5*\4=\4+\3=\3,\2B\0\2\1K\0\1\0\16textobjects\tmove\22goto_previous_end\1\0\2\a[]\17@class.outer\a[M\20@function.outer\24goto_previous_start\1\0\2\a[m\20@function.outer\a[[\17@class.outer\18goto_next_end\1\0\2\a][\17@class.outer\a]M\20@function.outer\20goto_next_start\1\0\2\a]m\20@function.outer\a]]\17@class.outer\1\0\1\venable\2\tswap\18swap_previous\1\0\1\15<leader>ah\21@parameter.inner\14swap_next\1\0\1\15<leader>al\21@parameter.inner\1\0\1\venable\2\vselect\aiF\1\0\4\6c$(function_definition) @function\vpython$(function_definition) @function\tjava#(method_declaration) @function\bcpp$(function_definition) @function\1\0\4\aic\17@class.inner\aif\20@function.inner\aac\17@class.outer\aaf\20@function.outer\1\0\1\venable\2\1\0\1\venable\2\rrefactor\15navigation\1\0\2\20goto_definition\15<leader>td\21list_definitions\15<leader>tl\1\0\1\venable\2\17smart_rename\1\0\1\17smart_rename\15<leader>tr\1\0\1\venable\2\28highlight_current_scope\1\0\1\venable\2\26highlight_definitions\1\0\0\1\0\1\venable\2\26incremental_selection\fkeymaps\1\0\4\19init_selection\14<c-n>c-i>\22scope_incremental\v<c-i>c\21node_incremental\v<c-i>n\21node_decremental\v<c-i>m\1\0\1\venable\2\14highlight\1\0\1\21ensure_installed\ball\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0")()
+loadstring("\27LJ\2\n!\0\1\3\0\1\0\4'\1\0\0\18\2\0\0&\1\2\1L\1\2\0\14<Cmd>lua '\0\1\3\0\1\0\4'\1\0\0\18\2\0\0&\1\2\1L\1\2\0\20<Cmd>Telescope ›\b\1\2\n\2\20\0&-\2\0\0009\2\0\2\18\4\0\0\18\5\1\0B\2\3\0015\2\2\0005\3\1\0=\3\3\0025\3\4\0=\3\5\0025\3\6\0=\3\a\2-\3\1\0009\3\b\3\18\5\2\0+\6\0\0003\a\t\0B\3\4\0016\3\n\0009\3\v\0039\3\f\3)\5\0\0'\6\3\0'\a\r\0'\b\14\0005\t\15\0B\3\6\0015\3\17\0005\4\16\0=\4\3\3-\4\1\0009\4\b\4\18\6\3\0-\a\1\0009\a\18\a3\b\19\0B\4\4\1K\0\1\0\0À\2À\0\22leader_key_mapper\1\0\0\1\0\5\alW\26lsp_workspace_symbols\alt\15treesitter\alw\25lsp_document_symbols\alr\19lsp_references\al.\21lsp_code_actions\1\0\1\fnoremap\2+<Cmd>lua vim.lsp.buf.code_action()<CR>\14<leader>a\24nvim_buf_set_keymap\bapi\bvim\0\19set_buf_keymap\6i\1\0\1\n<c-k>!vim.lsp.buf.signature_help()\6v\1\0\1\15<leader>lf#vim.lsp.buf.range_formatting()\6n\1\0\0\1\0\16\agW#vim.lsp.buf.workspace_symbol()\agi!vim.lsp.buf.implementation()\6K\24vim.lsp.buf.hover()\agD\30vim.lsp.buf.declaration()\n<c-k>!vim.lsp.buf.signature_help()\agd\29vim.lsp.buf.definition()\15<leader>lR\25vim.lsp.buf.rename()\14<leader>;#vim.lsp.diagnostic.goto_next()\15<leader>lf#vim.lsp.buf.range_formatting()\14<leader>,#vim.lsp.diagnostic.goto_prev()\15<leader>lF\"vim.lsp.buf.code_formatting()\ag0\"vim.lsp.buf.document_symbol()\15<leader>l.\30vim.lsp.buf.code_action()\agr\29vim.lsp.buf.references()\15<leader>el%vim.lsp.diagnostic.set_loclist()\agI\"vim.lsp.buf.type_definition()\14on_attachü\1\1\0\n\0\17\0\0266\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0026\2\0\0'\4\3\0B\2\2\0023\3\4\0009\4\5\0019\4\6\0045\6\b\0005\a\a\0=\a\t\6=\3\n\0065\a\v\0=\a\f\0069\a\r\0019\a\14\a'\t\15\0B\a\2\2=\a\16\6B\4\2\0012\0\0€K\0\1\0\rroot_dir\fpom.xml\17root_pattern\tutil\14filetypes\1\2\0\0\tjava\14on_attach\bcmd\1\0\0\1\2\0\0\16java-lsp.sh\nsetup\njdtls\0\16plugs.utils\14lspconfig\15completion\frequire\0")()
 -- Config for: vim-sneak
 loadstring("\27LJ\2\n9\0\0\3\0\3\0\0056\0\0\0009\0\1\0'\2\2\0B\0\2\1K\0\1\0\26let g:sneak#label = 1\bcmd\bvim\0")()
+-- Config for: completion-nvim
+loadstring("\27LJ\2\nŠ\2\0\0\4\0\v\0\0216\0\0\0009\0\1\0004\1\4\0005\2\4\0005\3\3\0=\3\5\2>\2\1\0015\2\6\0>\2\2\0015\2\a\0>\2\3\1=\1\2\0006\0\0\0009\0\1\0'\1\t\0=\1\b\0006\0\0\0009\0\1\0+\1\2\0=\1\n\0K\0\1\0$completion_matching_ignore_case\14vim-vsnip\30completion_enable_snippet\1\0\1\tmode\n<c-n>\1\0\1\tmode\n<c-p>\19complete_items\1\0\0\1\4\0\0\blsp\fsnippet\fbuffers#completion_chain_complete_list\6g\bvim\0")()
 -- Config for: nvim-web-devicons
 loadstring("\27LJ\2\nO\0\0\4\0\4\0\a6\0\0\0'\2\1\0B\0\2\0029\1\2\0005\3\3\0B\1\2\1K\0\1\0\1\0\1\fdefault\2\nsetup\22nvim-web-devicons\frequire\0")()
 -- Config for: vimwiki
 loadstring("\27LJ\2\n»\2\0\0\4\0\4\0\a6\0\0\0009\0\1\0009\0\2\0'\2\3\0+\3\2\0B\0\3\1K\0\1\0‰\2            let wiki = {}\n            let wiki.path = '~/.vimwiki'\n            let wiki.nested_syntaxes = {'javascript': 'javascript', 'typescript':'typescript', 'python': 'python', 'c++': 'cpp', 'java': 'java'}\n            let g:vimwiki_list = [wiki]\n        \14nvim_exec\bapi\bvim\0")()
--- Config for: completion-nvim
-loadstring("\27LJ\2\nÜ\3\0\0\4\0\14\0\0296\0\0\0009\0\1\0004\1\4\0005\2\4\0005\3\3\0=\3\5\2>\2\1\0015\2\6\0>\2\2\0015\2\a\0>\2\3\1=\1\2\0006\0\0\0009\0\1\0+\1\2\0=\1\b\0006\0\0\0009\0\1\0)\1P\0=\1\t\0006\0\0\0009\0\n\0'\2\v\0B\0\2\0016\0\0\0009\0\1\0005\1\r\0=\1\f\0K\0\1\0\1\0\f\rConstant\3\5\15Interfaces\3\5\vMethod\3\n\14Variables\3\a\vModule\3\a\rFunction\3\a\nField\3\5\tFile\3\0\fTabNine\3\0\fBuffers\3\1\fKeyword\3\4\nClass\3\5\30completion_items_priority,let g:completion_confirm_key = \"\\<C-y>\"\bcmd\27completion_timer_cycle$completion_matching_ignore_case\1\0\1\tmode\n<c-n>\1\0\1\tmode\n<c-p>\19complete_items\1\0\0\1\4\0\0\blsp\fsnippet\fbuffers#completion_chain_complete_list\6g\bvim\0")()
+-- Config for: nvim-treesitter
+loadstring("\27LJ\2\n½\t\0\0\a\0,\00016\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\4\0005\3\3\0=\3\5\0025\3\6\0=\3\a\0025\3\t\0005\4\b\0=\4\n\0035\4\v\0=\4\f\0035\4\r\0005\5\14\0=\5\15\4=\4\16\0035\4\17\0005\5\18\0=\5\15\4=\4\19\3=\3\20\0025\3\21\0005\4\22\0005\5\23\0005\6\24\0=\6\25\5=\5\15\4=\4\26\0035\4\27\0005\5\28\0=\5\29\0045\5\30\0=\5\31\4=\4 \0035\4!\0005\5\"\0=\5#\0045\5$\0=\5%\0045\5&\0=\5'\0045\5(\0=\5)\4=\4*\3=\3+\2B\0\2\1K\0\1\0\16textobjects\tmove\22goto_previous_end\1\0\2\a[]\17@class.outer\a[M\20@function.outer\24goto_previous_start\1\0\2\a[m\20@function.outer\a[[\17@class.outer\18goto_next_end\1\0\2\a][\17@class.outer\a]M\20@function.outer\20goto_next_start\1\0\2\a]m\20@function.outer\a]]\17@class.outer\1\0\1\venable\2\tswap\18swap_previous\1\0\1\15<leader>ah\21@parameter.inner\14swap_next\1\0\1\15<leader>al\21@parameter.inner\1\0\1\venable\2\vselect\aiF\1\0\4\tjava#(method_declaration) @function\vpython$(function_definition) @function\6c$(function_definition) @function\bcpp$(function_definition) @function\1\0\4\aaf\20@function.outer\aic\17@class.inner\aac\17@class.outer\aif\20@function.inner\1\0\1\venable\2\1\0\1\venable\2\rrefactor\15navigation\1\0\5\25list_definitions_toc\agO\24goto_previous_usage\n<a-#>\21list_definitions\15<leader>tD\20goto_definition\15<leader>td\20goto_next_usage\n<a-*>\1\0\1\venable\2\17smart_rename\fkeymaps\1\0\1\17smart_rename\15<leader>tr\1\0\1\venable\2\28highlight_current_scope\1\0\1\venable\2\26highlight_definitions\1\0\0\1\0\1\venable\2\26incremental_selection\1\0\1\venable\2\14highlight\1\0\1\21ensure_installed\ball\1\0\1\venable\2\nsetup\28nvim-treesitter.configs\frequire\0")()
 -- Conditional loads
 -- Load plugins in order defined by `after`
+vim.cmd [[ packadd vim-vsnip ]]
+
+-- Config for: vim-vsnip
+loadstring("\27LJ\2\ng\0\0\4\0\a\0\v6\0\0\0009\0\1\0006\1\0\0009\1\3\0019\1\4\1'\3\5\0B\1\2\2'\2\6\0&\1\2\1=\1\2\0K\0\1\0\14/snippets\vconfig\fstdpath\afn\22vsnip_snippet_dir\6g\bvim\0")()
+
+vim.cmd [[ packadd vim-vsnip-integ ]]
 END
 
 function! s:load(names, cause) abort
