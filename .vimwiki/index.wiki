@@ -1,11 +1,6 @@
 = WORK =
 * [[Todos]]
 
-= TODO =
-- [ ] Automate selection of jdk version
-- [X] Create alias
-- [X] Create program that converts csv to map of objects (json format)
-
 
 == ANGULAR ==
 1. [[angular]]
