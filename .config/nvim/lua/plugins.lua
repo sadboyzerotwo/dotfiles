@@ -39,6 +39,10 @@ return require('packer').startup(
 		use { 'nvim-telescope/telescope.nvim',
 			requires = {{'nvim-lua/popup.nvim'},{'nvim-lua/plenary.nvim'}}
 		}
+                use { 'norcalli/nvim-colorizer.lua' , config = function()
+                        require'colorizer'.setup()
+                    end
+                }
                 use { 'hrsh7th/vim-vsnip' ,
                    after = { 'completion-nvim' },
                     config = function()

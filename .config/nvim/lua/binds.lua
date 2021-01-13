@@ -25,6 +25,8 @@ map('n', '<leader>bl', '<cmd>Buffers<cr>')
 
 map('n', '<leader>oc', '<cmd>e $MYVIMRC<cr>')
 
+map('n', '<leader>gp', '"+p')
+map('v', '<leader>gy', '"+y')
 
 --lsp
 --[[
@@ -47,8 +49,24 @@ map('n', '<leader>gw', '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
 
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>')
 map('n', '<leader>fg', '<cmd>Telescope live_grep<cr>')
+map('n', '<leader>fs', '<cmd>Telescope grep_string<cr>')
 map('n', '<leader>fb', '<cmd>Telescope buffers<cr>')
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
+map('n', '<leader>jm', '<cmd>lua require("telescope.builtin").find_files({ search_dirs = { "src/main" }})<cr>')
+map('n', '<leader>jt', '<cmd>lua require("telescope.builtin").find_files({ search_dirs = { "src/test" }})<cr>')
 
+
+map('n', '<leader>tm', '<cmd>NvimTreeToggle<cr>')
+
+--maven
+map('n', '<leader>me', ':Dispatch mvn exec:java -Dexec.mainClass=""')
+
+map('n', '<leader>wp', '<cmd>resize +10<cr>')
+map('n', '<leader>wm', '<cmd>resize -10<cr>')
+
+map('n', '<leader>wk', '<cmd>wincmd k<cr>')
+map('n', '<leader>wj', '<cmd>wincmd j<cr>')
+map('n', '<leader>wl', '<cmd>wincmd l<cr>')
+map('n', '<leader>wh', '<cmd>wincmd h<cr>')
 
