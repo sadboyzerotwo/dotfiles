@@ -18,7 +18,7 @@ set('o', 'updatetime', 300)
 set('o', 'backup', false)
 set('o', 'writebackup', false)
 set('o', 'termguicolors', true)
-set('o','completeopt','menuone,noinsert,noselect')
+set('o','completeopt','menuone,noinsert')
 
 local indent = 4
 set('b', 'swapfile', false)

@@ -10,8 +10,7 @@ return function ()
       --highlights definition and usages under cursor
       highlight_definitions = {
         enable = true
-      },
-      highlight_current_scope = {
+      }, highlight_current_scope = {
         enable = true
       },
       smart_rename = {

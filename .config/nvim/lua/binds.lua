@@ -3,8 +3,7 @@ g.mapleader = ' '
 g.syntax_on = true
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true }
-	if opts then for k, v in pairs(opts) do options[k] = v end end
+	local options = { noremap = true } if opts then for k, v in pairs(opts) do options[k] = v end end
 	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
@@ -69,4 +68,10 @@ map('n', '<leader>wk', '<cmd>wincmd k<cr>')
 map('n', '<leader>wj', '<cmd>wincmd j<cr>')
 map('n', '<leader>wl', '<cmd>wincmd l<cr>')
 map('n', '<leader>wh', '<cmd>wincmd h<cr>')
+--map('i', '<expr> <Tab>', 'pumvisible() ? "\<C-n>" : "\<Tab>"');
+--map('i', '<expr> <S-Tab>', 'pumvisible() ? "\<C-p>" : "\<S-Tab>"');
 
+vim.cmd('inoremap <expr> <Tab>   pumvisible() ? \"\\<C-n>" : \"\\<Tab>\"')
+vim.cmd('inoremap <expr> <S-Tab> pumvisible() ? \"\\<C-p>" : \"\\<S-Tab>"')
+--inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+--aabinoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"

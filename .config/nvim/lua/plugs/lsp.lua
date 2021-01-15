@@ -23,13 +23,13 @@ return function()
                 ["K"] = "vim.lsp.buf.hover()",
                 ["<c-k>"] = "vim.lsp.buf.signature_help()",
                 ["<leader>lR"] = "vim.lsp.buf.rename()",
-                ["<leader>lf"] = "vim.lsp.buf.range_formatting()",
-                ["<leader>lF"] = "vim.lsp.buf.code_formatting()",
+                ["<leader>lF"] = "vim.lsp.buf.range_formatting()",
+                ["<leader>lf"] = "vim.lsp.buf.formatting()",
                 ["<leader>l."] = "vim.lsp.buf.code_action()",
                 ["<leader>el"] = "vim.lsp.diagnostic.set_loclist()",
                },
                v = {
-                ["<leader>lf"] = "vim.lsp.buf.range_formatting()",
+                ["<leader>lF"] = "vim.lsp.buf.range_formatting()",
                },
                i = {
                 ["<c-k>"] = "vim.lsp.buf.signature_help()",
@@ -45,6 +45,8 @@ return function()
             )
 
             vim.api.nvim_buf_set_keymap(0,'n','<leader>a', '<Cmd>lua vim.lsp.buf.code_action()<CR>', {noremap=true});
+            vim.api.nvim_buf_set_keymap(0,'i','<leader>nl', '<Esc>o', {noremap=true});
+
 
             local telescope_keymap = {
                 n = {

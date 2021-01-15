@@ -45,9 +45,7 @@ return require('packer').startup(
                 }
                 use { 'hrsh7th/vim-vsnip' ,
                    after = { 'completion-nvim' },
-                    config = function()
-                      vim.g.vsnip_snippet_dir = vim.fn.stdpath('config')..'/snippets'  
-                    end
+                    config = require('plugs.vsnip')
                 }
                 use { 'hrsh7th/vim-vsnip-integ' ,
                     after = { 'completion-nvim' ,'vim-vsnip' },
