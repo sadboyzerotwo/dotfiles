@@ -1,0 +1,81 @@
+{
+    "class":{
+        "prefix": ["jc"],
+        "body": [
+            "",
+            "/**",
+            " * @author ${VIM:\\$USER}",
+            " */",
+            "public class ${TM_FILENAME_BASE} ${1:extends ${2:Parent} }{",
+            "}"
+        ],
+        "description": "Java class"
+    },
+    "interface": {
+        "prefix": ["ji"],
+        "body": [
+            "/**",
+            " * @author ${VIM:\\$USER}",
+            " */",
+            "public interface ${TM_FILENAME_BASE}{",
+            "}"
+        ],
+        "description": "Java interface"
+    },
+    "main" : {
+        "prefix": ["psvm"],
+        "body": [
+            "    public static void main(String args[]){",
+            "        ${1}",
+            "    }"
+        ],
+        "description": "main method"
+    },
+    "println": {
+        "prefix": ["sout"],
+        "body": [
+            "System.out.println(\"${1}\");"
+        ],
+        "description": "print line"
+    },
+    "pubstatfinal":{
+        "prefix": ["psf"],
+        "body": [
+            "public static final "
+        ],
+        "description": "public static final"
+    },
+    "pristatfinal":{
+        "prefix": ["pvsf"],
+        "body": [
+            "private static final "
+        ],
+        "description": "private static final"
+    },
+    "primethod":{
+        "prefix": ["primethod"],
+        "body":[
+            "private ${1:return} ${2:methodName}(${3:params}){",
+            "    ${4:body}",
+            "}"
+        ],
+        "description": "private method"
+    },
+    "pubmethod":{
+        "prefix": ["pubmethod"],
+        "body":[
+            "public ${1:return} ${2:methodName}(${3:params}){",
+            "    ${4:body}",
+            "}"
+        ],
+        "description": "public method"
+    },
+    "sample":{
+        "prefix": ["sample"],
+        "body": [
+            "log.info(${1:$TM_SELECTED_TEXT});"
+        ],
+        "description": "sample"
+    }
+
+}
