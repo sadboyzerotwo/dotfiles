@@ -1,0 +1,25 @@
+= ARCH =
+
+== Installation ==
+
+=== Connect to Wireless ===
+
+1. wireless connection ==
+legend:
+ - <device>: name of device listed after device-list command
+ - <SSID>: name of wifi network
+* type iwctl
+* type device list
+* station <device> scan
+* station <device> get-networks
+* station <device> connect <SSID>
+
+1. disk 
+    - fdisk -l  lists of volumes
+    - lsblk list of volumes condensed
+    - 
+
+
+
+=== After Install ===
+- nmcli device wifi connect PLDT_Home_3C8C3 password <password>
