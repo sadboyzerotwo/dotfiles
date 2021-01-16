@@ -1,0 +1,30 @@
+window:
+    title: Sad Terminal
+
+font:
+    normal:
+        family: FiraMono Nerd Font
+        style: Medium
+
+    bold:
+        family: FiraMono Nerd Font
+        style: Bold
+
+    italic:
+        family: FiraMono Nerd Font
+        style: Italic
+
+    bold_italic:
+        family: FiraMono Nerd Font
+        style: Bold Italic
+
+    size: 13.0
+
+    offset:
+        x: 0
+        y: 0
+    glyph_Offset:
+        x: 0
+        y: 0
+import:
+    - /home/sadboy/.config/alacritty/gotham.yml
