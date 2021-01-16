@@ -116,5 +116,4 @@ export KEYTIMEOUT=1
 alias jdk11="export PATH='$HOME/.install/jdk-11.0.9/bin:$PATH' && export JAVA_HOME='$HOME/.install/jdk-11.0.9/'"
 alias jdk8="export PATH='$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/bin:$PATH' && export JAVA_HOME='$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/'"
 
-
-
+alias config="/usr/bin/git --git-dir=/home/sadboy/.cfg --work-tree=/home/sadboy"
