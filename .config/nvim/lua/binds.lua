@@ -54,6 +54,7 @@ map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>')
 
 map('n', '<leader>jm', '<cmd>lua require("telescope.builtin").find_files({ search_dirs = { "src/main" }})<cr>')
 map('n', '<leader>jt', '<cmd>lua require("telescope.builtin").find_files({ search_dirs = { "src/test" }})<cr>')
+map('n', '<leader>jp', '<cmd>lua require("telescope.builtin").find_files({ search_dirs = { "src" }})<cr>')
 
 
 map('n', '<leader>tm', '<cmd>NvimTreeToggle<cr>')

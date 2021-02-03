@@ -104,11 +104,12 @@ export PATH=$HOME/neovim/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.install/apache-maven-3.6.3/bin:$PATH
 export PATH=$HOME/.install/jdtls:$PATH
-
+export PATH=$HOME/.install/idea-IU-203.5981.155/bin:$PATH
 
 export JAVA_HOME=$HOME/.install/jdk-11.0.9
 #export JAVA_HOME=$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64
-export MAVE_HOME=$HOME/.install/apache-main-3.6.3
+export MAVEN_HOME=$HOME/.install/apache-main-3.6.3
+
 
 bindkey -v
 export KEYTIMEOUT=1
@@ -117,3 +118,14 @@ alias jdk11="export PATH='$HOME/.install/jdk-11.0.9/bin:$PATH' && export JAVA_HO
 alias jdk8="export PATH='$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/bin:$PATH' && export JAVA_HOME='$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/'"
 
 alias config="/usr/bin/git --git-dir=/home/sadboy/.cfg --work-tree=/home/sadboy"
+alias fd="fdfind"
+alias bat="batcat"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")" 
+ [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+
+alias procs="$HOME/.install/procs"
+alias tokei="$HOME/.install/tokei"
+
+ eval "$(starship init zsh)"

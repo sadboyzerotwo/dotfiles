@@ -7,7 +7,9 @@ local function set(scope, key, value)
 end
 
 cmd('filetype plugin on')
-cmd('colo gotham')
+cmd('colo one')
+
+--set('o', 'background','light')
 set('o', 'errorbells', false)
 set('o', 'smartcase', true)
 set('o', 'incsearch', true)
@@ -28,24 +30,18 @@ set('b', 'shiftwidth', indent)
 set('b', 'autoindent', true)
 set('b', 'softtabstop', indent)
 
-
-
 set('w', 'wrap', false)
 set('w', 'signcolumn', 'yes')
 
-
-
---o.shortmess = o.shortmess .. 'c'
---updatetime
---noswapfile
---nobackup
---nowritebackup
---undodir
---undofile
---hidden
---shortmess
 set('w', 'relativenumber', true)
 set('w', 'wrap', false)
 
 vim.o.shortmess = vim.o.shortmess .. 'c'
+
+--TODO: Dispatch mvn exec:java -Dexec.mainClass=""
+function mvncompile()
+    vim.cmd('Dispatch mvn clean compile')
+end
+
+
 

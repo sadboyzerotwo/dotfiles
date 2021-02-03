@@ -45,7 +45,7 @@ return function()
             )
 
             vim.api.nvim_buf_set_keymap(0,'n','<leader>a', '<Cmd>lua vim.lsp.buf.code_action()<CR>', {noremap=true});
-            vim.api.nvim_buf_set_keymap(0,'i','<leader>nl', '<Esc>o', {noremap=true});
+            --vim.api.nvim_buf_set_keymap(0,'i','<leader>nl', '<Esc>o', {noremap=true});
 
 
             local telescope_keymap = {
@@ -103,17 +103,17 @@ return function()
             }
         }
         ]]--
+        --[[
 	nvim_lsp.jdtls.setup{
                 cmd = { 'java-lsp.sh' },
 		on_attach = on_attach,
 		filetypes = { "java" },
                 root_dir = nvim_lsp.util.root_pattern('pom.xml')
-                --[[,
-		init_options = {
-			jvm_args = {
-				"-javaagent:/home/sadboy/.install/lombok/lombok.jar -Xbootclasspath/a:/home/sadboy/.install/lombok/lombok.jar"
-			}
-		}]]--
-	}
+	}]]--
+
+
+        nvim_lsp.tsserver.setup{
+            on_attach = on_attach
+        }
         
 end
