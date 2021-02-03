@@ -4,22 +4,25 @@ window:
     padding:
         x: 10
         y: 10
+    dimensions:
+        columns: 100
+        lines: 30
 
 font:
     normal:
-        family: FiraMono Nerd Font
+        family: SauceCodePro Nerd Font
         style: Medium
 
     bold:
-        family: FiraMono Nerd Font
+        family: SauceCodePro Nerd Font
         style: Bold
 
     italic:
-        family: FiraMono Nerd Font
+        family: SauceCodePro Nerd Font
         style: Italic
 
     bold_italic:
-        family: FiraMono  Nerd Font
+        family: SauceCodePro  Nerd Font
 
         style: Bold Italic
 
@@ -32,8 +35,8 @@ font:
         x: 0
         y: 0
 import:
-    - /home/sadboy/.config/alacritty/gotham.yml
+    - /home/sadboy/.config/alacritty/one_dark.yml
 
 shell:
     program: /usr/bin/zsh
-background_opacity: 0.7
+background_opacity: 1.0
