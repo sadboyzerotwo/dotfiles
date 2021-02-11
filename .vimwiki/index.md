@@ -4,6 +4,14 @@
 * [Exceptions](Exceptions)
 
 
+# JAVA LIBS
+* lwjgl3
+
+
+# AWESOME
+* [Volume](awesomewm_volume)
+* [Network](awesome_wm_network)
+* [Datetime](awesome_datetime)
 
 
 # MY SETTINGS

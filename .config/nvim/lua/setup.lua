@@ -7,7 +7,11 @@ local function set(scope, key, value)
 end
 
 cmd('filetype plugin on')
-cmd('colo one')
+
+cmd('colo gruvbox-material')
+cmd("let g:gruvbox_material_background = 'hard'")
+cmd('let g:gruvbox_material_enable_italic = 1')
+cmd('let g:lightline = { "colorscheme" : "gruvbox_material"}')
 
 --set('o', 'background','light')
 set('o', 'errorbells', false)
@@ -19,8 +23,8 @@ set('o', 'hidden', true)
 set('o', 'updatetime', 300)
 set('o', 'backup', false)
 set('o', 'writebackup', false)
-set('o', 'termguicolors', true)
 set('o','completeopt','menuone,noinsert')
+set('o', 'termguicolors', true)
 
 local indent = 4
 set('b', 'swapfile', false)

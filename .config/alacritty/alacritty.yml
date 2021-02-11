@@ -23,10 +23,9 @@ font:
 
     bold_italic:
         family: SauceCodePro  Nerd Font
-
         style: Bold Italic
 
-    size: 10.0
+    size: 9.5
 
     offset:
         x: 0
@@ -35,8 +34,8 @@ font:
         x: 0
         y: 0
 import:
-    - /home/sadboy/.config/alacritty/one_dark.yml
+    - /home/sadboy/.config/alacritty/gruvbox_material.yml
 
 shell:
     program: /usr/bin/zsh
-background_opacity: 1.0
+background_opacity: 0.9

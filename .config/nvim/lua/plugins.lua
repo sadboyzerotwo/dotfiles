@@ -30,8 +30,8 @@ return require('packer').startup(
 		use { 'jremmen/vim-ripgrep' }
                 use { 'whatyouhide/vim-gotham' }
                 use { 'kyazdani42/nvim-web-devicons', config = require('plugs.nvim-web-devicons') }
-		use { 'vim-airline/vim-airline' }
-		use { 'vim-airline/vim-airline-themes' }
+		--use { 'vim-airline/vim-airline' }
+		--use { 'vim-airline/vim-airline-themes' }
 		use { 'vimwiki/vimwiki', config = require('vimwiki') }
 		use { 'nvim-treesitter/nvim-treesitter-textobjects'}
 		use { 'nvim-treesitter/nvim-treesitter-refactor'}
@@ -80,15 +80,30 @@ return require('packer').startup(
                            vim.api.nvim_buf_set_keymap(0,'i','<c-k>', '<Cmd>lua vim.lsp.buf.signature_help()<CR>', { noremap=true })
 
                         end
-                        require('jdtls').start_or_attach( {
-                            cmd = {'java-lsp.sh'},
-                            on_attach = on_attach,
-                            root_dir = require('jdtls.setup').find_root({'pom.xml'})})
+
+                        function JavaLspSetup()
+                            require('jdtls').start_or_attach( {
+                                cmd = {'java-lsp.sh'},
+                                on_attach = on_attach,
+                                root_dir = require('jdtls.setup').find_root({'pom.xml'})})
+                        end
+
+                        vim.cmd [[augroup lsp_java]]
+                        vim.cmd [[autocmd!]]
+                        vim.cmd [[autocmd FileType java  call v:lua.JavaLspSetup()]]
+                        vim.cmd [[augroup end]]
+
                     end
 
                 }
                 use { 'dracula/vim', as = 'dracula' }
                 use { 'rakr/vim-one' }
+                use { 'b4skyx/serenade' }
+                use { 'sainnhe/gruvbox-material' }
+                use { 'sainnhe/forest-night' }
+                use { 'sainnhe/sonokai' }
+                use { 'sainnhe/edge' }
+                use { 'itchyny/lightline.vim' }
                 --use { '~/Lab/nvim-plugins/whid' }
 	end
 )
