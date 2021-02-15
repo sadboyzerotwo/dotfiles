@@ -1,0 +1,47 @@
+format = """\
+[┌───────────────────>](green)
+[└─>](green)$username\
+        $time\
+        $directory\
+        $git_branch\
+        $git_commit\
+        $git_status\
+        $git_state\
+        $java\
+        $nodejs\
+        $lua\
+        $cmd_duration\
+"""
+
+add_newline = false
+
+[directory]
+home_symbol = "*"
+
+[character]
+success_symbol = "[➜ ](bold green)"
+error_symbol = "[✗](bold red)"
+vicmd_symbol = "[V](bold green) "
+
+[package]
+disabled = false
+
+[time]
+disabled = true
+
+[java]
+symbol = " "
+style = "red"
+
+[git_status]
+staged = '[++\($count)](green)'
+modified = '[($count)!](orange)'
+untracked = '[($count)?](red)'
+
+[git_commit]
+disabled = false
+commit_hash_length = 6
+
+[lua]
+symbol = " "
+
