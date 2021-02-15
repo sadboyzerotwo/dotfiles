@@ -11,8 +11,13 @@ cmd('filetype plugin on')
 cmd('colo gruvbox-material')
 cmd("let g:gruvbox_material_background = 'hard'")
 cmd('let g:gruvbox_material_enable_italic = 1')
+cmd('let g:gruvbox_material_transparent_background = 1')
 cmd('let g:lightline = { "colorscheme" : "gruvbox_material"}')
 
+--[[cmd('colo serenade')
+cmd('let g:serenade_enable_italic = 1')
+cmd('let g:serenade_transparent_background = 1')
+cmd('let g:lightline = { "colorscheme" : "serenade"}')]]--
 --set('o', 'background','light')
 set('o', 'errorbells', false)
 set('o', 'smartcase', true)

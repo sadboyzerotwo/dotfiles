@@ -11,7 +11,7 @@ return function ()
       highlight_definitions = {
         enable = true
       }, highlight_current_scope = {
-        enable = true
+        enable = false
       },
       smart_rename = {
         enable = true,

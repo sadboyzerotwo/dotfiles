@@ -106,8 +106,9 @@ export PATH=$HOME/.install/apache-maven-3.6.3/bin:$PATH
 export PATH=$HOME/.install/jdtls:$PATH
 export PATH=$HOME/.install/idea-IU-203.5981.155/bin:$PATH
 
-export JAVA_HOME=$HOME/.install/jdk-11.0.9
+#export JAVA_HOME=$HOME/.install/jdk-11.0.9
 #export JAVA_HOME=$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64
+export JAVA_HOME=$HOME/.install/java-se-8u41-ri
 export MAVEN_HOME=$HOME/.install/apache-main-3.6.3
 
 
@@ -116,6 +117,7 @@ export KEYTIMEOUT=1
 
 alias jdk11="export PATH='$HOME/.install/jdk-11.0.9/bin:$PATH' && export JAVA_HOME='$HOME/.install/jdk-11.0.9/'"
 alias jdk8="export PATH='$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/bin:$PATH' && export JAVA_HOME='$HOME/.install/openlogic-openjdk-8u272-b10-linux-x64/'"
+alias jdk8="export PATH='$HOME/.install/java-se-8u41-ri/bin:$PATH' && export JAVA_HOME='$HOME/.install/java-se-8u41-ri/'"
 
 alias config="/usr/bin/git --git-dir=/home/sadboy/.cfg --work-tree=/home/sadboy"
 alias fd="fdfind"
